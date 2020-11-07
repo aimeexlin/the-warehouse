@@ -1,4 +1,4 @@
-﻿/* ENGGEN131 Project - C Project - 2019 */
+/* ENGGEN131 Project - C Project - 2019 */
 /* The Warehouse */
 
 /*
@@ -52,11 +52,9 @@ void MyTestFunction(int task)
 		int values1[MAX_ARRAY_SIZE] = {3, 7, 5, 6, 3, 4, 8, 4, 5, 8, 12, 11};
 		int values2[MAX_ARRAY_SIZE] = {6, 17, 6, 6, 6, 6, 12, 12, 17, 10000};
 		int values3[MAX_ARRAY_SIZE] = {5, 4, 3, 2, 1};
-		int values4[MAX_ARRAY_SIZE] = {5, 5, 5, 5, 5};
 		printf("   Winning bid = %d (should be 6)\n", WinningBid(values1, 12));
 		printf("   Winning bid = %d (should be 10000)\n", WinningBid(values2, 10));
 		printf("   Winning bid = %d (should be 1)\n", WinningBid(values3, 5));
-		printf("   Winning bid = %d (should be -1)\n", WinningBid(values4, 5));
 	}
 
 	// An example of code that you could use to test Task Five.
@@ -67,16 +65,13 @@ void MyTestFunction(int task)
 		char box1[MAX_ARRAY_SIZE] = {0};
 		char box2[MAX_ARRAY_SIZE] = {0};
 		char box3[MAX_ARRAY_SIZE] = {0};
-		char box4[MAX_ARRAY_SIZE] = {0};
 		BoxDesign(box1, 12, 5);
 		BoxDesign(box2, 15, 15);
 		BoxDesign(box3, 4, 4);
-		BoxDesign(box4, 3, 3);
 		printf("Box 1 = \n%s\n", box1);
 		printf("Box 2 = \n%s\n", box2);
 		printf("Box 3 = \n%s\n", box3);
-		printf("Box 4 = \n%s\n", box4);
-		printf("Checking string lengths = %d %d %d %d\n", (int)(strlen(box1)), (int)(strlen(box2)), (int)(strlen(box3)), (int)(strlen(box4)));
+		printf("Checking string lengths = %d %d %d\n", (int)(strlen(box1)), (int)(strlen(box2)), (int)(strlen(box3)));
 	}
 
 	// An example of code that you could use to test Task Six.
@@ -109,35 +104,9 @@ void MyTestFunction(int task)
 			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 0, 0, 0, 0, 0, 0, 2}
 		};
-		int warehouse3[WAREHOUSE_SIZE][WAREHOUSE_SIZE] = {
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-		};
-		int warehouse4[WAREHOUSE_SIZE][WAREHOUSE_SIZE] = {
-			{1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0, 0, 2}
-		};
 
 		WorkerRoute(warehouse1);
 		WorkerRoute(warehouse2);
-		WorkerRoute(warehouse3);
-		WorkerRoute(warehouse4);
 
 		printf("Worker route 1: \n");
 		for (i = 0; i < WAREHOUSE_SIZE; i++) {
@@ -150,20 +119,6 @@ void MyTestFunction(int task)
 		for (i = 0; i < WAREHOUSE_SIZE; i++) {
 			for (j = 0; j < WAREHOUSE_SIZE; j++) {
 				printf("%d", warehouse2[i][j]);
-			}
-			printf("\n");
-		}
-		printf("\nWorker route 3: \n");
-		for (i = 0; i < WAREHOUSE_SIZE; i++) {
-			for (j = 0; j < WAREHOUSE_SIZE; j++) {
-				printf("%d", warehouse3[i][j]);
-			}
-			printf("\n");
-		}
-		printf("\nWorker route 4: \n");
-		for (i = 0; i < WAREHOUSE_SIZE; i++) {
-			for (j = 0; j < WAREHOUSE_SIZE; j++) {
-				printf("%d", warehouse4[i][j]);
 			}
 			printf("\n");
 		}
@@ -234,7 +189,7 @@ int main(void)
 	};
 
 	/* An example warehouses for testing Task 10 */
-	/*int warehouse10[10][10] = {
+	int warehouse10[10][10] = {
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		{1, 1, 1, 0, 0, 0, 1, 1, 1, 1},
 		{1, 2, 5, 3, 0, 0, 1, 1, 1, 1},
@@ -245,10 +200,10 @@ int main(void)
 		{1, 2, 0, 0, 2, 0, 0, 1, 1, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};*/
+	};
 
 	/* Optional level for Task 10 */
-	/*int warehouse10[10][10] = {
+	/*	int warehouse10[10][10] = {
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		{1, 1, 1, 0, 0, 0, 0, 0, 1, 1},
 		{1, 1, 1, 0, 3, 1, 0, 0, 1, 1},
@@ -259,64 +214,7 @@ int main(void)
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};*/
-
-	// Checking up
-	/*int warehouse10[10][10] = {
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 4, 1, 0, 2, 3, 4, 0, 0, 1},
-		{1, 3, 4, 4, 4, 4, 4, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 1, 0, 2, 3, 1},
-		{1, 1, 0, 2, 0, 3, 3, 3, 3, 1},
-		{1, 5, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};*/
-
-	// Checking down
-	/*int warehouse10[10][10] = {
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 5, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 1, 0, 2, 0, 3, 3, 3, 3, 1},
-		{1, 0, 0, 0, 0, 1, 0, 2, 3, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 3, 4, 4, 4, 4, 4, 0, 0, 1},
-		{1, 4, 1, 0, 2, 3, 4, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};*/
-
-	// Checking left
-	/*int warehouse10[10][10] = {
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 0, 0, 4, 3, 0, 0, 1, 5, 1},
-		{1, 0, 0, 1, 4, 0, 0, 0, 0, 1},
-		{1, 0, 0, 0, 4, 0, 0, 2, 0, 1},
-		{1, 0, 0, 2, 4, 0, 0, 0, 0, 1},
-		{1, 0, 0, 3, 4, 0, 1, 3, 0, 1},
-		{1, 0, 0, 4, 4, 0, 0, 3, 0, 1},
-		{1, 0, 0, 0, 0, 0, 2, 3, 0, 1},
-		{1, 0, 0, 0, 0, 0, 3, 3, 0, 1},
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};*/
-
-	// Checking right
-	int warehouse10[10][10] = {
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-		{1, 5, 1, 0, 0, 3, 4, 0, 0, 1},
-		{1, 0, 0, 0, 0, 4, 1, 0, 0, 1},
-		{1, 0, 2, 0, 0, 4, 0, 0, 0, 1},
-		{1, 0, 0, 0, 0, 4, 2, 0, 0, 1},
-		{1, 0, 3, 1, 0, 4, 3, 0, 0, 1},
-		{1, 0, 3, 0, 0, 4, 4, 0, 0, 1},
-		{1, 0, 3, 2, 0, 0, 0, 0, 0, 1},
-		{1, 0, 3, 3, 0, 0, 0, 0, 0, 1},
-		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	};
-
+	}; */
 	int task = -1;
 	int i, j;
 
@@ -390,11 +288,11 @@ void PrintWarehouse(int warehouse[10][10])
 			} else if (warehouse[i][j] == 3) {
 				printf("O");
 			} else if (warehouse[i][j] == 4) {
-				printf("o");
+				printf("O");
 			} else if (warehouse[i][j] == 5) {
 				printf("X");
 			} else if (warehouse[i][j] == 6) {
-				printf("x");
+				printf("X");
 			}
 		}
 		printf("\n");
